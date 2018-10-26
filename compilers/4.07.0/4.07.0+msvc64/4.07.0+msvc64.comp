@@ -7,7 +7,7 @@ build: [
   [ "cp" "config/m-nt.h" "byterun/caml/m.h" ]
   [ "cp" "config/s-nt.h" "byterun/caml/s.h" ]
   [ "cp" "config/Makefile.msvc64" "config/Makefile" ]
-  [ "sed" "-i" "s#@PREFIX@#%{prefix}%#g" "config/Makefile" ]
+  [ "sed" "-i" "'s/C:\/ocamlms64/%{prefix}%/g'" "config/Makefile" ]
   [ "git" "clone" "https://github.com/alainfrisch/flexdll.git"]
   [ make "flexdll" ]
   [ make "world.opt" ]
